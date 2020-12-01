@@ -1,0 +1,27 @@
+.users-columnHeadings,
+.users-columns {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 4px 4px rgb(248, 248, 248);
+  border-radius: 5px;
+  border: 1px solid rgb(132, 88, 173);
+  padding: 20px;
+  width: 60rem;
+}
+
+.users-columnHeadings {
+  background: rgb(132, 88, 173);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.users-columnHeadings li,
+.users-columns li {
+  min-width: 13rem;
+}
+
+.users-columnHeadings .account-heading,
+.users-columns .account-heading {
+  min-width: 15rem;
+}
