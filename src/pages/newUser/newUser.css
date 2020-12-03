@@ -10,7 +10,7 @@
   height: 1.7rem;
   margin-bottom: 1rem;
   padding-left: 15px;
-  border: 1px solid rgb(132, 88, 173);
+  border: 1px solid rgb(100, 45, 142);
   border-radius: 5px;
 }
 
@@ -25,10 +25,11 @@
 button {
   width: 12em;
   height: 2.5em;
-  background: rgb(132, 88, 173);
+  background: rgb(100, 45, 142);
   text-transform: uppercase;
   color: rgb(240, 233, 233);
   font-weight: bold;
   border-radius: 5px;
   border: none;
+  margin-top: 15px;
 }
