@@ -17,15 +17,15 @@ const loginReducer = (state, { field, value }) => {
 const UserLogin = () => {
   const [userState, dispatch] = useReducer(loginReducer, loginIntialState);
   const history = useHistory();
-
   const handleChange = (e) => {
     dispatch({ field: e.target.name, value: e.target.value });
   };
   const { email, password } = userState;
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     signInWithEmail(email, password);
-    history.replace("/admin");
+    // history.replace("/home");
+    history.replace("/home");
   };
   return (
     <Login

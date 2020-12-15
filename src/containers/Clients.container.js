@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import { signOutEmail } from "../firebase/emailSignIn";
 import { useHistory } from "react-router-dom";
 import UsersList from "../pages/allUsers/UsersList";
+import UserPageNavbar from "../components/UserPageNavbar";
 
 const intialState = {
   loading: true,
@@ -60,7 +61,14 @@ const Clients = () => {
           : state.data[0].firstname}
         {state.error ? state.error : null}
       </div> */}
-      <Button text="Logout" type="button" handleClick={handleClick} />
+      {/* <Button text="Logout" type="button" handleClick={handleClick} /> */}
+      <UserPageNavbar
+        navText={[
+          { id: "1", text: "AllClients", link: "/client" },
+          { id: "2", text: "Create User", link: "/admin" },
+        ]}
+        handleLogout={handleClick}
+      />
     </>
   );
 };

@@ -2,6 +2,8 @@ import React, { useReducer } from "react";
 import CreateNewUserUI from "../pages/newUser/CreateNewUserPage";
 import { getTokenWithHeaders } from "../firebase/getTokenWithHeaders";
 import MakeAdmin from "../pages/newUser/MakeAdmin";
+import Button from "../components/Button";
+import { useHistory } from "react-router-dom";
 
 const newUserIntialState = {
   firstname: "",
@@ -35,6 +37,8 @@ const CreateNewUser = () => {
     adminReducer,
     adminInitialState
   );
+
+  const history = useHistory();
 
   const handleUserChange = (e) => {
     dispatch({ field: e.target.name, value: e.target.value });
@@ -89,8 +93,12 @@ const CreateNewUser = () => {
     console.log(addAdminRoleRes.message);
     return addAdminRoleRes.message;
   };
+  const handleBack = () => {
+    history.replace("/client");
+  };
   return (
     <>
+      <Button text="back" type="button" handleClick={handleBack} />
       <CreateNewUserUI
         firstname={firstname}
         lastname={lastname}
