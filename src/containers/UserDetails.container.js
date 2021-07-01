@@ -51,7 +51,7 @@ const UserDetails = () => {
     (async () => {
       try {
         const specificUserDetails = await fetch(
-          `https://localhost:8080/clients/${userSlug}`
+          `https://bankingbackendapp.herokuapp.com/clients/${userSlug}`
         );
         const specificUserDetailsInJson = await specificUserDetails.json();
         userDispatch({
@@ -70,7 +70,7 @@ const UserDetails = () => {
     (async () => {
       try {
         const specificUserBalance = await fetch(
-          `https://localhost:8080/accounts/account/${userSlug}`
+          `https://bankingbackendapp.herokuapp.com/accounts/account/${userSlug}`
         );
         const specificUserBalanceInJson = await specificUserBalance.json();
 

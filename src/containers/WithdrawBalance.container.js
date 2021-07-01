@@ -53,7 +53,7 @@ const WithdrawBalance = () => {
     e.preventDefault();
     const headers = await getTokenWithHeaders();
     const withdrawAmount = await fetch(
-      `https://localhost:8080/accounts/withdraw/${withdrawSlug}`,
+      `https://bankingbackendapp.herokuapp.com/accounts/withdraw/${withdrawSlug}`,
       {
         method: "POST",
         headers,

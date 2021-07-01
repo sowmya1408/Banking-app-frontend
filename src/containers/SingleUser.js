@@ -40,7 +40,7 @@ const SingleUser = () => {
         const headers = await getTokenWithHeaders();
 
         const singleUserDetails = await fetch(
-          `https://localhost:8080/clients/userId/user`,
+          `https://bankingbackendapp.herokuapp.com/clients/userId/user`,
           {
             method: "GET",
             headers,
@@ -49,7 +49,7 @@ const SingleUser = () => {
         const singleUserDetailsInJson = await singleUserDetails.json();
         console.log(singleUserDetailsInJson[0]._id);
         const specificUserBalance = await fetch(
-          `https://localhost:8080/accounts/account/${singleUserDetailsInJson[0]._id}`
+          `https://bankingbackendapp.herokuapp.com/accounts/account/${singleUserDetailsInJson[0]._id}`
         );
         const specificUserBalanceInJson = await specificUserBalance.json();
 
@@ -64,7 +64,7 @@ const SingleUser = () => {
       }
     })();
   }, []);
-  console.log(singleUserState.singleUserData);
+  console.log(singleUserState);
   const handleClick = () => {
     signOutEmail();
     history.replace("/");

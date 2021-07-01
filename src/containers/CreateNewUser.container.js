@@ -62,32 +62,38 @@ const CreateNewUser = () => {
   const handleUserSubmit = async (e) => {
     e.preventDefault();
     const headers = await getTokenWithHeaders();
-    const addUsers = await fetch("https://localhost:8080/clients", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        streetAddress,
-        city,
-        phone,
-        email,
-        password,
-      }),
-    });
+    const addUsers = await fetch(
+      "https://bankingbackendapp.herokuapp.com/clients",
+      {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          streetAddress,
+          city,
+          phone,
+          email,
+          password,
+        }),
+      }
+    );
     const addUsersResInJson = await addUsers.json();
     return addUsersResInJson;
   };
   const handleAdminSubmit = async (e) => {
     e.preventDefault();
     const headers = await getTokenWithHeaders();
-    const addAdminRole = await fetch("https://localhost:8080/makeAdmin", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        userId,
-      }),
-    });
+    const addAdminRole = await fetch(
+      "https://bankingbackendapp.herokuapp.com/makeAdmin",
+      {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          userId,
+        }),
+      }
+    );
 
     const addAdminRoleRes = await addAdminRole.json();
     console.log(addAdminRoleRes.message);

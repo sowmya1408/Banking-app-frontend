@@ -53,7 +53,7 @@ const Transfer = () => {
     e.preventDefault();
     const headers = await getTokenWithHeaders();
     const transferAmount = await fetch(
-      `https://localhost:8080/accounts//transfer/transaction`,
+      `https://bankingbackendapp.herokuapp.com/accounts//transfer/transaction`,
       {
         method: "PUT",
         headers,

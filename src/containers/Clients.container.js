@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect } from "react";
-import Button from "../components/Button";
 import { signOutEmail } from "../firebase/emailSignIn";
 import { useHistory } from "react-router-dom";
 import UsersList from "../pages/allUsers/UsersList";
@@ -35,7 +34,9 @@ const Clients = () => {
   useEffect(() => {
     (async () => {
       try {
-        const allUsers = await fetch("https://localhost:8080/clients");
+        const allUsers = await fetch(
+          "https://bankingbackendapp.herokuapp.com/clients"
+        );
         const allUsersInJson = await allUsers.json();
         dispatch({
           type: "FETCH SUCCESS",
